@@ -25,6 +25,7 @@ WORKDIR /app
 COPY requirements.txt /app
 RUN pip config set global.index-url "$PIP_INDEX" && \
     pip config set global.extra-index-url "$PIP_INDEX" && \
+    pip install --upgrade huggingface_hub && \
     python -m pip install --upgrade pip && \
     python -m pip install -r requirements.txt
 
